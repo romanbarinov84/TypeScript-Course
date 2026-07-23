@@ -1,19 +1,9 @@
+const User = {
+    Admin:"ADMIN",
+    User:"USER",
+    Guest:"GUEST",
+}as const
 
-type Product = {
-    id:number;
-    title:string;
-    price:number;
-}
-
-function parseJson(text:string):unknown {
-    return JSON.parse(text)
-}
+type UserRole = typeof User[keyof typeof User];
 
 
-const col= `{
-    "id":42,
-    "title":"subscribe",
-    "price":1948.34
-}`
-
-console.log(parseJson(col));
